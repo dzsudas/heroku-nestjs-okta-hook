@@ -8,7 +8,7 @@ export class SamlTestHookService implements OktaSamlHookProvider {
     return {
       "attributes": "Blah",
       "isVip": true,
-      "UserId": payload.userName
+      "nameId": "john.doe@example.com"
     }
   }
 }
