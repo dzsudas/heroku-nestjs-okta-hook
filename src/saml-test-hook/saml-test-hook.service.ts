@@ -8,7 +8,7 @@ export class SamlTestHookService implements OktaSamlHookProvider {
     return {
       "attributes": "Blah",
       "isVip": true,
-      "nameId": "john.doe@example.com"
+      // "nameId": "john.doe@example.com"
     }
   }
 }
