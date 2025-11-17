@@ -34,17 +34,13 @@ export class OktaSamlHookController {
               "value": [
                 {
                   "op": "replace",
-                  "path": `/subject/${key}`,
-                  "value": {
-                    "attributes": {
-                      "NameFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
-                    },
-                    "attributeValues": [
-                      {
-                        "value": `${value}`,
-                      }
-                    ]
-                  }
+                  "path": "/subject/nameId",
+                  "value": `${value}`
+                },
+                {
+                  "op": "replace",
+                  "path": "/subject/format",
+                  "value": "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
                 }
               ]
             }
