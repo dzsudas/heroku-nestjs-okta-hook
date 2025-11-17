@@ -30,7 +30,7 @@ export class OktaSamlHookController {
         "commands": Object.entries(hookAttributes).map(([key, value]) => {
           if (key === 'nameId') {
             return {
-              "type": "com.okta.saml.tokens.assertion.update",
+              "type": "com.okta.assertion.update",
               "value": {
                 "subject": {
                   "nameId": {
