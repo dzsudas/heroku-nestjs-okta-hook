@@ -35,19 +35,7 @@ export class OktaSamlHookController {
                 {
                   "op": "replace",
                   "path": `/subject/${key}`,
-                  "value": {
-                    "attributes": {
-                      "NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:persistent"
-                    },
-                    "attributeValues": [
-                      {
-                        "attributes": {
-                          "xsi:type": "xs:string"
-                        },
-                        "value": `${value}`,
-                      }
-                    ]
-                  }
+                  "value": `${value}`,
                 }
               ]
             }
