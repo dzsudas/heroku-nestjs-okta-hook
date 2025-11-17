@@ -1,0 +1,89 @@
+{
+  "eventId": "VUx7NtybR_6FctOlSFrTGw",
+  "eventTime": "2025-11-11T14:32:44.000Z",
+  "eventType": "com.okta.saml.tokens.transform",
+  "eventTypeVersion": "1.0",
+  "contentType": "application/json",
+  "cloudEventVersion": "0.1",
+  "source": "https://trial.okta.com/app/trial_samlinlinehooktest_1/exkxbetjed9SjtZDn697/sso/saml",
+  "data": {
+    "context": {
+      "request": {
+        "id": "5787cad7f32aaff59218bea51ceb821b",
+        "method": "GET",
+        "url": {
+          "value": "https://trial.okta.com/app/trial_samlinlinehooktest_1/exkxbetjed9SjtZDn697/sso/saml"
+        },
+        "ipAddress": "155.191.12.6"
+      },
+      "protocol": {
+        "type": "SAML2.0",
+        "issuer": {
+          "id": "0oaxbe2jeeb2jW0q3697",
+          "name": "SAML inline hook test",
+          "uri": "http://www.okta.com/exkxbe2jed9SttZDn697"
+        }
+      },
+      "session": {
+        "id": "idxvk-x-uZ5SQ2rELxbKaSO7w",
+        "userId": "00uwym6d4oKh6bPpQ697",
+        "login": "john.doe@example.com",
+        "createdAt": "2025-11-11T14:32:44.000Z",
+        "expiresAt": "2025-11-11T16:32:44.000Z",
+        "status": "ACTIVE",
+        "lastPasswordVerification": "2025-11-11T14:27:16.000Z",
+        "lastFactorVerification": "2025-11-11T14:28:08.000Z",
+        "amr": [
+          "PASSWORD",
+          "OKTA_VERIFY",
+          "ONE_TIME_PASSWORD",
+          "MULTIFACTOR_AUTHENTICATION",
+          "PHISHING_RESISTANT",
+          "EMAIL"
+        ],
+        "idp": {
+          "id": "00owym6d0iB7bxwOy697",
+          "type": "OKTA"
+        },
+        "mfaActive": false
+      },
+      "user": {
+        "id": "00uwym6d4oKh6vPpQ697",
+        "passwordChanged": "2025-10-31T03:43:43.000Z",
+        "profile": {
+          "login": "john.doe@example.com",
+          "firstName": "John",
+          "lastName": "Doe",
+          "locale": "en",
+          "timeZone": "America/Los_Angeles"
+        }
+      }
+    },
+    "assertion": {
+      "subject": {
+        "nameId": "john.doe@example.com",
+        "nameFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
+        "confirmation": {
+          "method": "urn:oasis:names:tc:SAML:2.0:cm:bearer",
+          "data": {
+            "recipient": "https://sptest.iamshowcase.com/acs"
+          }
+        }
+      },
+      "authentication": {
+        "sessionIndex": "id1762871564849.1251722071",
+        "authnContext": {
+          "authnContextClassRef": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
+        }
+      },
+      "conditions": {
+        "audienceRestriction": [
+          "IAMShowcase"
+        ]
+      },
+      "lifetime": {
+        "expiration": 300
+      }
+    }
+  }
+}

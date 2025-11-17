@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { OktaController } from './okta/okta.controller';
+import {DiscoveryModule} from "@nestjs/core";
+import { OktaSamlHookModule } from './okta-saml-hook/okta-saml-hook.module';
+import { SamlTestHookModule } from './saml-test-hook/saml-test-hook.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController, OktaController],
-  providers: [AppService],
+  imports: [DiscoveryModule, OktaSamlHookModule, SamlTestHookModule],
 })
 export class AppModule {}
