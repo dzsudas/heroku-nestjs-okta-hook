@@ -22,7 +22,7 @@ export class HookServiceProviderService {
     return hookProviders.find(({metatype}) => {
       const metadata: HookMetadata = Reflect.getMetadata(HOOK_SERVICE, metatype)
 
-      return metadata.issuerName === payload.issuerName;
+      return payload.source.includes(metadata.name);
     })?.instance
   }
 }

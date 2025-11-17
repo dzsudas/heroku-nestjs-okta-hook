@@ -1,9 +1,10 @@
 export interface SamlInlineHookPayload {
   issuerName: string;
+  source: string;
   userName: string
   appId: string
 }
 
 export interface HookMetadata {
-  issuerName: string
+  name: string
 }

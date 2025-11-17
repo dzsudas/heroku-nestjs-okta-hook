@@ -42,9 +42,9 @@ type Payload = {
 
 export const samlInlineHook = (payload: Payload): SamlInlineHookPayload => {
   try {
-    console.log(JSON.stringify(payload.data.context.user.profile.login))
     return {
       issuerName: payload.data.context.protocol.issuer.name,
+      source: payload.source,
       userName: payload.data.context.user.profile.login,
       appId: payload.data.context.protocol.issuer.id
     }

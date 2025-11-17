@@ -4,10 +4,10 @@ import {HookMetadata, SamlInlineHookPayload} from "src/okta-saml-hook/types";
 
 export const HOOK_SERVICE = 'HOOK_SERVICE';
 
-export const OktaSamlHookService = (issuerName: string) =>
+export const OktaSamlHookService = (name: string) =>
   applyDecorators(
     Inject(),
-    SetMetadata<string, HookMetadata>(HOOK_SERVICE, {issuerName})
+    SetMetadata<string, HookMetadata>(HOOK_SERVICE, {name: name})
   );
 
 export interface OktaSamlHookProvider {
