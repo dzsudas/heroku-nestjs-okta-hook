@@ -31,17 +31,11 @@ export class OktaSamlHookController {
           if (key === 'nameId') {
             return {
               "type": "com.okta.assertion.patch",
-              "value": [
-                {
-                  "op": "replace",
-                  "path": `/subject/${key}`,
-                  "value": `${value}`,
-                }, {
-                  "op": "replace",
-                  "path": `/subject/nameFormat`,
-                  "value": 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
-                }
-              ]
+              "value": [{
+                "op": "replace",
+                "path": `/subject/${key}`,
+                "value": `${value}`,
+              }]
             }
           }
 
