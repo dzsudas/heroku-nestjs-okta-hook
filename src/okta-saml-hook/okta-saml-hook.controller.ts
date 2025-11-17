@@ -30,15 +30,26 @@ export class OktaSamlHookController {
         "commands": Object.entries(hookAttributes).map(([key, value]) => {
           if (key === 'nameId') {
             return {
-              "type": "com.okta.assertion.update",
-              "value": {
-                "subject": {
-                  "nameId": {
-                    "id": `${value}`,
-                    "format": "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
+              "type": "com.okta.assertion.patch",
+              "value": [
+                {
+                  "op": "replace",
+                  "path": `/subject/${key}`,
+                  "value": {
+                    "attributes": {
+                      "NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+                    },
+                    "attributeValues": [
+                      {
+                        "attributes": {
+                          "xsi:type": "xs:string"
+                        },
+                        "value": `${value}`,
+                      }
+                    ]
                   }
                 }
-              }
+              ]
             }
           }
 
